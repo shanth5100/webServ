@@ -4,4 +4,33 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+     -->
+  <!-- <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener> -->
+    
+    
+  <servlet>
+        <servlet-name>Jersey Web Application</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.packages</param-name>
+            <param-value>ws.jersey.pjt1</param-value>
+        </init-param>
+        
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Web Application</servlet-name> 
+        <!-- //webapi -->
+        <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+	
 </web-app>
